@@ -1,0 +1,32 @@
+function calculate () {
+    var x = parseFloat(prompt("Please type in your first number"));
+    var oper = prompt("Please type in the operator");
+    var y = parseFloat(prompt("Please type in your second number"));
+
+    var result;
+
+    switch(oper) {
+        case "+":
+            result = x + y;
+            break;
+        case "*":
+            result = x * y;
+            break;
+        case "-":
+            result = x - y;
+            break;
+        case "/":
+            if (y === 0) {
+                alert("Cannot divide by zero");
+                return;  // Exiting the function early if division by zero is attempted.
+            } else {
+                result = x / y;
+            }
+            break;
+        default:
+            alert("Invalid operator");
+            return;  // Exiting the function early if an invalid operator is given.
+    }
+
+    alert("the result is " + result);
+}
